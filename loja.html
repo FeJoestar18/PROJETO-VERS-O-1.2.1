@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Frog Tech</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #20571b; /* Verde claro */
+    color: #333;
+}
+
+/* Cabeçalho */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #04411e; /* Verde escuro */
+    padding: 20px;
+    border-bottom: 3px solid #4caf50;
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 5em;
+    color: white;
+    text-align: left;
+/*pra deixar o brilho*/
+    text-shadow: 0 0 10px #028702, 
+    0 0 20px #00ff00, 
+    0 0 30px #00ff00;
+}
+
+.logo img {
+    width: 100px;
+    max-width:400px ;
+    border-radius: 400px ;
+
+   
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0 0 10px #00ff00, 
+                0 0 20px #00ff00, 
+                0 0 30px #00ff00;          
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+
+    text-shadow: 0 0 10px #028702, 
+    0 0 20px #00ff00, 
+    0 0 30px #00ff00;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Barra de pesquisa */
+.search-bar {
+    margin: 30px auto;
+    text-align: center;
+}
+
+.search-bar input {
+    width: 40%;
+    padding: 10px;
+    font-size: 1em;
+    border: 2px solid #2e8b57;
+    border-radius: 5px;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    background-color: #2e8b57;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #4caf50;
+}
+
+/* Produtos */
+.produtos {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.produto {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    
+}
+
+.produto img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    width: 150px;
+    height: 150px;
+    
+}
+
+.produto h3 {
+    margin: 15px 0;
+    font-size: 1.25em;
+}
+
+.produto p {
+    font-size: 1.1em;
+    color: #011d0d;
+}
+
+.btn-comprar {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2e8b57;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn-comprar:hover {
+    background-color: #4caf50;
+}
+
+
+
+/* Rodapé */
+footer {
+    background-color: #2e8b57;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 50px;
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <div class="logo">
+            <img src="../img/logo1.png" alt="Logo da Loja">
+
+        </div>
+        <h1> Frog Tech</h1>
+        <nav>
+            <ul>
+                <li><a href="paginahome.html">Home</a></li>
+                <li><a href="">Loja</a></li>
+                
+                
+            </ul>
+        </nav>
+    </header>
+
+    
+    <!-- Seção dos produtos -->
+    <main>
+        <section class="produtos">
+            <div class="grid-container">
+
+                <!--produto -->
+                <div class="produto">
+                    <img src="../img/um.png" alt="Produto 1">
+                    <h3>Notebook Dell Inspiron 15</h3>
+                    <p>R$ 2.699,99</p>
+                    <a href="compra.html" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="produto">
+                    <img src="../img/dois.png" alt="Produto 2">
+                    <h3>Mouse Gamer Logitech G502</h3>
+                    <p>R$ 299,97</p>
+                    <a href="compra1.html" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="produto">
+                    <img src="../img/tres.png" alt="Produto 1">
+                    <h3>Switch Gigabit TP-Link TL-SG105</h3>
+                    <p>R$ 159,49</p>
+                    <a href="compra2.html" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="produto">
+                    <img src="../img/quatro.png" alt="Produto 1">
+                    <h3>Monitor Samsung 27" Curved</h3>
+                    <p>R$ 3.000,95</p>
+                    <a href="compra3.html" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="produto">
+                    <img src="../img/cinco.png" alt="Produto 1">
+                    <h3>Teclado Mecânico Corsair K70 RGB</h3>
+                    <p>R$ 865,95</p>
+                    <a href="compra4.html" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="produto">
+                    <img src="../img/seis.png" alt="Produto 1">
+                    <h3>Fone de Ouvido Bluetooth JBL TUNE 500BT</h3>
+                    <p>R$ 238,20</p>
+                    <a href="compra5.html" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="produto">
+                    <img src="../img/sete.png" alt="Produto 1">
+                    <h3>HD Externo Seagate 1TB</h3>
+                    <p>R$ 213,90</p>
+                    <a href="compra6.html" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="produto">
+                    <img src="../img/oito.png" alt="Produto 1">
+                    <h3>Placa de Vídeo NVIDIA GeForce RTX 3060</h3>
+                    <p>R$ 1.849,30</p>
+                    <a href="compra7.html" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="produto">
+                    <img src="../img/nove.png" alt="Produto 1">
+                    <h3>Roteador TP-Link Archer C6</h3>
+                    <p>R$ 315,00</p>
+                    <a href="compra8.html" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="produto">
+                    <img src="../img/dez.png" alt="Produto 1">
+                    <h3>SSD Kingston A400 480GB</h3>
+                    <p>R$ 275,20</p>
+                    <a href="compra9.html" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="produto">
+                    <img src="../img/onze.png" alt="Produto 1">
+                    <h3>Cabo HDMI 2.0 de 2 Metros</h3>
+                    <p>R$ 9,90</p>
+                    <a href="compra10.html" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="produto">
+                    <img src="../img/doze.png" alt="Produto 1">
+                    <h3>Hub USB-C com 4 Portas</h3>
+                    <p>R$ 75,90</p>
+                    <a href="compra11.html" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="produto">
+                    <img src="../img/treze.png" alt="Produto 1">
+                    <h3>Carregador Universal para Notebook </h3>
+                    <p>R$ 24,90</p>
+                    <a href="compra12.html" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="produto">
+                    <img src="../img/quatorze.png" alt="Produto 1">
+                    <h3>Suporte para Notebook Ajustável </h3>
+                    <p>R$ 429,90</p>
+                    <a href="compra13.html" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="produto">
+                    <img src="../img/quinze.png" alt="Produto 1">
+                    <h3>Webcam Logitech HD C920 </h3>
+                    <p>R$ 179,90</p>
+                    <a href="compra14.html" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="produto">
+                    <img src="../img/dezeseis.png" alt="Produto 1">
+                    <h3>Headset Gamer HyperX Cloud Stinger </h3>
+                    <p>R$ 138,83</p>
+                    <a href="compra15.html" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="produto">
+                    <img src="../img/dezesete.png" alt="Produto 1">
+                    <h3>Teclado Wireless Logitech K400 </h3>
+                    <p>R$ 182,93</p>
+                    <a href="compra16.html" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="produto">
+                    <img src="../img/dezoito.png" alt="Produto 1">
+                    <h3>Caixa de Som Bluetooth JBL GO 3 </h3>
+                    <p>R$ 590,50</p>
+                    <a href="compra17.html" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="produto">
+                    <img src="../img/dezenove.png" alt="Produto 1">
+                    <h3>Impressora Multifuncional HP DeskJet 2776 </h3>
+                    <p>R$ 404,99</p>
+                    <a href="compra18.html" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="produto">
+                    <img src="../img/vinte.png" alt="Produto 1">
+                    <h3>Apc Back-UPS BZ600-BR 600VA</h3>
+                    <p>R$ 449,99</p>
+                    <a href="compra19.html" class="btn-comprar">Comprar</a>
+                </div>
+
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Loja Frog Tech. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>

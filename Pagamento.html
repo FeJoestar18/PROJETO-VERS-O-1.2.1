@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Frog Tech" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento</title>
+    <style> 
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: Arial, sans-serif;
+          
+        }
+        
+        body {
+          
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          font-family: Arial, Helvetica, sans-serif;
+            background-color: #85FFBD;
+            background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
+        }
+        
+        .container {
+          padding: 20px;
+          border-radius: 10px;
+          width: 100%;
+          max-width: 400px;
+          text-align: center;
+          background-color: rgb(1, 159, 25);
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, 
+                        rgba(0, 0, 0, 0.12) 0px -12px 30px, 
+                        rgba(0, 0, 0, 0.12) 0px 4px 6px, 
+                        rgba(0, 0, 0, 0.17) 0px 12px 13px, 
+                        rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        }
+        
+        h1 {
+          font-size: 24px;
+          margin-bottom: 20px;
+        }
+        
+        form {
+          display: flex;
+          flex-direction: column;
+        }
+        
+        label {
+          margin-bottom: 5px;
+          font-weight: bold;
+        }
+        
+        input {
+          padding: 10px;
+          margin-bottom: 15px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          font-size: 16px;
+        }
+        
+        button {
+          padding: 10px;
+          background-color: rgba(0, 71, 15, 0.658);
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 18px;
+          transition: all 0.8s;
+          
+        }
+        
+        button:hover {
+            background-color: #950000;
+            cursor: pointer;
+        }
+        
+        #qrcode {
+          margin-top: 20px;
+          display: flex;
+          justify-content: center;
+        }
+        
+        header {
+            color: #17B169;
+            padding: 10px;
+            font-size: 15px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        header .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        footer {
+            background-color: rgba(0, 71, 15, 0); 
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 10px 0;
+            position: fixed; 
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        /* Estilos da logo */
+        .logo {
+            width: 50px; /* Largura inicial da logo */
+            height: 50px; /* Altura inicial da logo */
+            background-image: url('img/logo1.png');
+            background-size: contain; /* Ajusta o tamanho da imagem dentro da div */
+            background-repeat: no-repeat;
+            background-position: center;
+            cursor: pointer;
+            border-radius: 50%; /* Faz a logo ficar circular */
+            
+        }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+
+</head>
+<body>
+ 
+    <header>
+        <img src="img/logo1.png" style="max-width: 75px;">
+        <span class="logo-text">FrogTech</span>
+    </header>
+
+    <div class="container">
+        <h1>Pagamento</h1>
+        <form id="qrForm">
+            <label for="text">Chave PIX:</label>
+            <input type="text" id="text" placeholder="Preencha esse campo" required maxlength="11" minlength="11" inputmode="numeric">
+<br>
+            <button type="submit">Gerar QR Code</button>
+        </form>
+
+        <div id="qrcode"></div>
+    </div>
+    
+    <footer>
+      <p>&copy; 2024 Meu Site. Todos os direitos reservados a Frogtech.</p>
+    </footer>
+
+    <script>
+        document.getElementById("qrForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Impede o envio do formulário (recarregamento da página)
+
+            // Obtém o valor da chave PIX inserida
+            var chavePix = document.getElementById("text").value;
+
+            // Verifica se o campo da chave PIX tem exatamente 11 caracteres
+            if (chavePix.length === 11) {
+                // Limpa qualquer QR Code anterior
+                document.getElementById("qrcode").innerHTML = "";
+
+                // Gera o QR Code com a chave PIX
+                var qrcode = new QRCode(document.getElementById("qrcode"), {
+                    text: chavePix, // Texto do QR Code (a chave PIX inserida)
+                    width: 128,     // Largura do QR Code
+                    height: 128     // Altura do QR Code
+                });
+            } else {
+                alert("Por favor, insira uma chave PIX."); // Alerta se não tiver 11 caracteres
+            }
+        });
+    </script>
+   
+
+</body>
+</html>
